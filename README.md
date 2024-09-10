@@ -95,28 +95,28 @@ class Behaviour is Serializable {
 ```
 When run through WrenDoc we will get an output like this:
 
-> ```
-> $ perl WrenDoc.pl -out Doc.md -in Behaviour.wren -v
-> WrenDoc: building Doc.md
->  WrenDoc: starting Behaviour.txt
->    WrenDoc Found: class
->    WrenDoc Found: static getter
->    WrenDoc Found: static setter
->    WrenDoc Found: static getter
->    WrenDoc Found: static setter
->    WrenDoc Found: getter
->    WrenDoc Found: setter
->    WrenDoc Found: getter
->    WrenDoc Found: constructor
->    WrenDoc Found: static method
->    WrenDoc Found: static method
->    WrenDoc Found: static method
->    WrenDoc Found: method
->    WrenDoc Found: method
->    WrenDoc Found: method
->  WrenDoc: built doc => Behaviour.txt
-> WrenDoc: Finished
-> ```
+```
+$ perl WrenDoc.pl -out Doc.md -in Behaviour.wren -v
+WrenDoc: building Doc.md
+  WrenDoc: starting Behaviour.txt
+    WrenDoc Found: class
+    WrenDoc Found: static getter
+    WrenDoc Found: static setter
+    WrenDoc Found: static getter
+    WrenDoc Found: static setter
+    WrenDoc Found: getter
+    WrenDoc Found: setter
+    WrenDoc Found: getter
+    WrenDoc Found: constructor
+    WrenDoc Found: static method
+    WrenDoc Found: static method
+    WrenDoc Found: static method
+    WrenDoc Found: method
+    WrenDoc Found: method
+    WrenDoc Found: method
+  WrenDoc: built doc => Behaviour.txt
+WrenDoc: Finished
+```
 
 # Doc
 ### Modules
@@ -192,6 +192,8 @@ When run through WrenDoc we will get an output like this:
 ##### Method ``update()`` <a id='Behaviour-0-m4'></a>
 ``return null``
 > Runs every frame after start regardless of whether or not the Behaviour is attached.
-
+\
+\
+\
 ## Organization
 When documenting multiple modules and classes WrenDoc will organize a list of modules at the top of the page and at each module it will list all classes in the module.
