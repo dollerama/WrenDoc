@@ -14,7 +14,7 @@ perl WrenDoc.pl -out docs.md -in game.wren,player.wren
 ## How To Use
 To document your code just add documentation comments before a code symbol.
 ```js
-///(TypeA), (TypeB) -> (ReturnType)
+///(Arg A), (Arg B), ... -> (ReturnType)
 ///Descriptions can be typed as well and will append to-
 ///the next available code symbol.
 ```
