@@ -26,7 +26,7 @@ class Behaviour is Serializable {
     ///_ -> Any
     ///Global data for behaviours
     static data { __data }
-	///Any -> _
+    ///Any -> _
     static data=(v) { __data = v }
     
     ///Num -> Num
