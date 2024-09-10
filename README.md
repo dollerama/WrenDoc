@@ -23,8 +23,8 @@ Here's an example of some wren code that has been documented.
 ```js
 ///Behaviours allow for custom code to run on GameObjects during the game loop.
 class Behaviour is Serializable {
-	///_ -> Any
-	///Global data for behaviours
+    ///_ -> Any
+    ///Global data for behaviours
     static data { __data }
 	///Any -> _
     static data=(v) { __data = v }
@@ -39,7 +39,7 @@ class Behaviour is Serializable {
         __data[i] = v
     }
 	
-	///_ -> Num
+    ///_ -> Num
     frame {
         if(_frame == null) {
             _frame = 0
@@ -47,13 +47,13 @@ class Behaviour is Serializable {
         return _frame
     }
 	
-	///Num -> _
+    ///Num -> _
     frame=(v) {_frame=v}
 	
-	///_ -> ComponentBehaviour
+    ///_ -> ComponentBehaviour
     as_behaviour { _behaviour }
 	
-	///GameObject, ComponentBehaviour -> Behaviour
+    ///GameObject, ComponentBehaviour -> Behaviour
     construct new(g, c) {
         if(__data == null) {
             __data = {}
@@ -71,7 +71,7 @@ class Behaviour is Serializable {
         __data[g.uuid]["%(c)"][b.uuid] = c.new()
     }
 	
-	///_ -> null
+    ///_ -> null
     ///Runs the frame after setup.
     static start() {}
     ///_ -> null
