@@ -48,7 +48,6 @@ sub create_doc {
         if ( ( $_ =~ /\/{3}.*/g ) != 0 ) {
             if ( ( $_ =~ /(?<=\/{3})(.*)(?=(\s->))/s ) == 0 ) {
                 $description .= "> " . ( $_ =~ /(?<=\/{3})(.*)/s )[0] . "\n";
-                next;
             }
             else {
                 $description = "";
@@ -59,6 +58,8 @@ sub create_doc {
                 }
                 $return      = ( $_ =~ /(?<=(->\W))(.*)/s )[1];
             }
+
+            next;
         }
 
         if ( ( $_ =~ /^\s*foreign/s ) != 0 ) {
