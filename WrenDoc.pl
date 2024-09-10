@@ -32,7 +32,8 @@ sub create_doc {
     my $final = "";
     my $depth = 0;
 
-    my $mod = basename($file, ".wren");
+    my $mod = lc(basename($file, ".wren"));
+    my $mod_unf = basename($file, ".wren");
     my @classes = ();
     my @methods = ();
     my @getters = ();
@@ -613,9 +614,9 @@ sub create_doc {
         }
     }
 
-    my $output = "## Module ``".$mod."``\n### Classes\n".join("\n", @classes)."\n".$final;
+    my $output = "## Module ``".$mod_unf."``\n### Classes\n".join("\n", @classes)."\n".$final;
 
-    return(basename($file, ".wren"), $output);
+    return($mod_unf, $output);
 }
                                        
 my @inputs;
