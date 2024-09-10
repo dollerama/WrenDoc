@@ -2,6 +2,7 @@
 A documentation generator for the [Wren](https://wren.io/) scripting language.
  
 ## Usage
+Uses perl v5.30.3
 ```
 perl WrenDoc.pl -out docs.md -in game.wren,player.wren
 ```
