@@ -100,7 +100,7 @@ When run through WrenDoc we will get an output like this:
 ```
 $ perl WrenDoc.pl -out Doc.md -in Behaviour.wren -v
 WrenDoc: building Doc.md
-  WrenDoc: starting Behaviour.txt
+  WrenDoc: starting Behaviour.wren
     WrenDoc Found: class
     WrenDoc Found: static getter
     WrenDoc Found: static setter
@@ -116,7 +116,7 @@ WrenDoc: building Doc.md
     WrenDoc Found: method
     WrenDoc Found: method
     WrenDoc Found: method
-  WrenDoc: built doc => Behaviour.txt
+  WrenDoc: built doc => Behaviour.wren
 WrenDoc: Finished
 ```
 
