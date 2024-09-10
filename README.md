@@ -96,8 +96,8 @@ When run through WrenDoc we will get an output like this:
 
 ### Class ``Behaviour``
 > Inherits from ``Serializable``
-
-Behaviours allow for custom code to run on GameObjects during the game loop.
+>
+> Behaviours allow for custom code to run on GameObjects during the game loop.
 #### Constructors
 > - ``new``
 #### Getters
