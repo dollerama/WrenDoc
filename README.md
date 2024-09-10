@@ -20,6 +20,8 @@ To document your code just add documentation comments before a code symbol.
 ```
 If no documentation comments are found no worries your code will still generate a document, however, there will not be any type annotations or descriptions. Any missing type annotation will appear as a ``_``
 
+When documenting multiple modules and classes WrenDoc will organize links for each module, class, and class components(methods, etc.) in their appropriate places.
+
 Here's an example of some wren code that has been documented:
 ```js
 ///Behaviours allow for custom code to run on GameObjects during the game loop.
@@ -192,7 +194,3 @@ WrenDoc: Finished
 ##### Method ``update()`` <a id='behaviour-0-m4'></a>
 ``return null``
 > Runs every frame after start regardless of whether or not the Behaviour is attached.
-
-
-## Organization
-When documenting multiple modules and classes WrenDoc will organize a list of modules at the top of the page and at each module it will list all classes in the module.
