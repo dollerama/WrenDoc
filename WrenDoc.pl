@@ -32,6 +32,7 @@ sub create_doc {
     my $final = "";
     my $depth = 0;
 
+    my $mod = basename($file, ".wren");
     my @classes = ();
     my @methods = ();
     my @getters = ();
@@ -130,8 +131,8 @@ sub create_doc {
                                 }
                             }
                         }
-                        my $link = $#classes."-s".$#setters;
-                        $result .= "``{#".$link."}\n";
+                        my $link = $mod."-".$#classes."-s".$#setters;
+                        $result .= "`` <a id='".$link."'></a>\n";
                         $result .= $description . "\n";
                         push( @setters, "> - [" . $name . "](#".$link.")" );
                         
@@ -162,8 +163,8 @@ sub create_doc {
                                 $result .= ", ";
                             }
                         }
-                        my $link = $#classes."-m".$#methods;
-                        $result .= ")`` {#".$link."}\n" . "``return " . $return . "``\n";
+                        my $link = $mod."-".$#classes."-m".$#methods;
+                        $result .= ")`` <a id='".$link."'></a>\n" . "``return " . $return . "``\n";
                         $result .= $description . "\n";
                         push( @methods, "> - [" . $name . "](#".$link.")" );
                         
@@ -183,8 +184,8 @@ sub create_doc {
                         if($parameters) {
                             $result .= ": ".$parameters;
                         }
-                        my $link = $#classes."-g".$#getters;
-                        $result .= "`` {#".$link."}\n" . "``return " . $return . "``\n";
+                        my $link = $mod."-".$#classes."-g".$#getters;
+                        $result .= "`` <a id='".$link."'></a>\n" . "``return " . $return . "``\n";
                         $result .= $description . "\n";
                         push( @getters, "> - [" . $name . "](#".$link.")" );
                         
@@ -228,8 +229,8 @@ sub create_doc {
                                 }
                             }
                         }
-                        my $link = $#classes."-s".$#setters;
-                        $result .= "`` {#".$link."}\n";
+                        my $link = $mod."-".$#classes."-s".$#setters;
+                        $result .= "`` <a id='".$link."'></a>\n";
                         $result .= $description . "\n";
                         push( @setters, "> - [" . $name . "](#".$link.")");
                         
@@ -259,8 +260,8 @@ sub create_doc {
                                 $result .= ", ";
                             }
                         }
-                        my $link = $#classes."-m".$#methods;
-                        $result .= ")`` {#".$link."}\n" . "``return " . $return . "``\n";
+                        my $link = $mod."-".$#classes."-m".$#methods;
+                        $result .= ")`` <a id='".$link."'></a>\n" . "``return " . $return . "``\n";
                         $result .= $description . "\n";
                         push( @methods, "> - [" . $name . "](#".$link.")" );
                         
@@ -278,8 +279,8 @@ sub create_doc {
                         if($parameters) {
                             $result .= ": ".$parameters;
                         }
-                        my $link = $#classes."-g".$#getters;
-                        $result .= "`` {#".$link."}\n" . "``return " . $return . "``\n";
+                        my $link = $mod."-".$#classes."-g".$#getters;
+                        $result .= "`` <a id='".$link."'></a>\n" . "``return " . $return . "``\n";
                         $result .= $description . "\n";
                         push( @getters, "> - [" . $name . "](#".$link.")");
                         
@@ -365,8 +366,8 @@ sub create_doc {
                                     }
                                 }
                             }
-                            my $link = $#classes."-s".$#setters;
-                            $result .= "`` {#".$link."}\n";
+                            my $link = $mod."-".$#classes."-s".$#setters;
+                            $result .= "`` <a id='".$link."'><\a>\n";
                             $result .= $description . "\n";
                             push( @setters, "> - [" . $name . "](#".$link.")" );
                             
@@ -398,8 +399,8 @@ sub create_doc {
                                     $result .= ", ";
                                 }
                             }
-                            my $link = $#classes."-m".$#methods;
-                            $result .= ")`` {#".$link."}\n" . "``return " . $return . "``\n";
+                            my $link = $mod."-".$#classes."-m".$#methods;
+                            $result .= ")`` <a id='".$link."'></a>\n" . "``return " . $return . "``\n";
                             $result .= $description . "\n";
                             push( @methods, "> - [" . $name . "](#".$link.")" );
                             
@@ -419,8 +420,8 @@ sub create_doc {
                             if($parameters) {
                                 $result .= ": ".$parameters;
                             }
-                            my $link = $#classes."-g".$#getters;
-                            $result .= "`` {#".$link."}\n" . "``return " . $return . "``\n";
+                            my $link = $mod."-".$#classes."-g".$#getters;
+                            $result .= "`` <a id='".$link."'></a>\n" . "``return " . $return . "``\n";
                             $result .= $description . "\n";
                             push( @getters, "> - [" . $name . "](#".$link.")");
                             
@@ -452,8 +453,8 @@ sub create_doc {
                             $result .= ", ";
                         }
                     }
-                    my $link = $#classes."-c".$#constructors;
-                    $result .= ")`` {#".$link."}\n" . "``return " . $return . "``\n";
+                    my $link = $mod."-".$#classes."-c".$#constructors;
+                    $result .= ")`` <a id='".$link."'></a>\n" . "``return " . $return . "``\n";
                     $result .= $description . "\n";
                     push( @constructors, "> - [" . $name . "](#".$link.")" );
                     
@@ -504,14 +505,14 @@ sub create_doc {
                             }
                             
                             if ( $name eq "=" ) {
-                                my $link = $#classes."-m".$#methods;
-                                $result .= ")`` {#".$link."}\n";
+                                my $link = $mod."-".$#classes."-m".$#methods;
+                                $result .= ")`` <a id='".$link."'></a>\n";
                                 
                                 push( @methods, "> - [" . $name . "](#".$link.")");
                             }
                             else {
-                                my $link = $#classes."-s".$#setters;
-                                $result .= "`` {#".$link."}\n";
+                                my $link = $mod."-".$#classes."-s".$#setters;
+                                $result .= "`` <a id='".$link."'></a>\n";
                                 push( @setters, "> - [" . $name . "](#".$link.")");
                             }
                             $result .= $description . "\n";
@@ -544,8 +545,8 @@ sub create_doc {
                                     $result .= ", ";
                                 }
                             }
-                            my $link = $#classes."-m".$#methods;
-                            $result .= ")`` {#".$link."}\n" . "``return " . $return . "``\n";
+                            my $link = $mod."-".$#classes."-m".$#methods;
+                            $result .= ")`` <a id='".$link."'></a>\n" . "``return " . $return . "``\n";
                             $result .= $description . "\n";
                             push( @methods, "> - [" . $name . "](#".$link.")" );
                             
@@ -564,8 +565,8 @@ sub create_doc {
                             if($parameters) {
                                 $result .= ": ".$parameters;
                             }
-                            my $link = $#classes."-g".$#getters;
-                            $result .= "`` {#".$link."}\n" . "``return " . $return . "``\n";
+                            my $link = $mod."-".$#classes."-g".$#getters;
+                            $result .= "`` <a id='".$link."'></a>\n" . "``return " . $return . "``\n";
                             $result .= $description . "\n";
                             push( @getters, "> - [" . $name . "](#".$link.")");
                             
@@ -612,7 +613,7 @@ sub create_doc {
         }
     }
 
-    my $output = "## Module ``".basename($file, ".wren")."``\n### Classes\n".join("\n", @classes)."\n".$final;
+    my $output = "## Module ``".$mod."``\n### Classes\n".join("\n", @classes)."\n".$final;
 
     return(basename($file, ".wren"), $output);
 }
