@@ -4,7 +4,7 @@ A documentation generator for the [Wren](https://wren.io/) scripting language.
 ## Usage
 Uses perl v5.30.3
 ```
-perl WrenDoc.pl -out docs.md -in game.wren,player.wren
+perl WrenDoc.pl -out Doc.md -in Behaviour.wren -v
 ```
 ### Flags
 > - \-i | in: comma separated .wren inputs
@@ -14,7 +14,7 @@ perl WrenDoc.pl -out docs.md -in game.wren,player.wren
 ## How To Use
 To document your code just add documentation comments before a code symbol.
 ```js
-///(Arg A), (Arg B), ... -> (ReturnType)
+///(Arg Type A), (Arg Type B), ... -> (Return Type)
 ///Descriptions can be typed as well and will append to-
 ///the next available code symbol.
 ```
@@ -95,71 +95,101 @@ class Behaviour is Serializable {
 ```
 When run through WrenDoc we will get an output like this:
 
+> ```
+> $ perl WrenDoc.pl -out Doc.md -in Behaviour.wren -v
+> WrenDoc: building Doc.md
+>  WrenDoc: starting Behaviour.txt
+>    WrenDoc Found: class
+>    WrenDoc Found: static getter
+>    WrenDoc Found: static setter
+>    WrenDoc Found: static getter
+>    WrenDoc Found: static setter
+>    WrenDoc Found: getter
+>    WrenDoc Found: setter
+>    WrenDoc Found: getter
+>    WrenDoc Found: constructor
+>    WrenDoc Found: static method
+>    WrenDoc Found: static method
+>    WrenDoc Found: static method
+>    WrenDoc Found: method
+>    WrenDoc Found: method
+>    WrenDoc Found: method
+>  WrenDoc: built doc => Behaviour.txt
+> WrenDoc: Finished
+> ```
+
+# Doc
+### Modules
+> - [Behaviour](#module-behaviour)
+## Module ``Behaviour``
+### Classes
+> - [Behaviour](#class-behaviour)
 ### Class ``Behaviour``
 > Inherits from ``Serializable``
 >
 > Behaviours allow for custom code to run on GameObjects during the game loop.
+
 #### Constructors
-> - ``new``
+> - [new](#Behaviour-0-c-1)
 #### Getters
-> - ``data``
-> - ``[i]``
-> - ``frame``
-> - ``as_behaviour``
+> - [data](#Behaviour-0-g-1)
+> - [[i]](#Behaviour-0-g0)
+> - [frame](#Behaviour-0-g1)
+> - [as_behaviour](#Behaviour-0-g2)
 #### Setters
-> - ``data``
-> - ``[i]``
-> - ``frame``
+> - [data](#Behaviour-0-s-1)
+> - [[i]](#Behaviour-0-s0)
+> - [frame](#Behaviour-0-s1)
 #### Methods
-> - ``start``
-> - ``update``
-> - ``onCollision``
-> - ``setup``
-> - ``start``
-> - ``update``
-##### Static Getter ``data``
+> - [start](#Behaviour-0-m-1)
+> - [update](#Behaviour-0-m0)
+> - [onCollision](#Behaviour-0-m1)
+> - [setup](#Behaviour-0-m2)
+> - [start](#Behaviour-0-m3)
+> - [update](#Behaviour-0-m4)
+##### Static Getter ``data`` <a id='Behaviour-0-g-1'></a>
 ``return Any``
 > Global data for behaviours
 
-##### Static Setter ``data = v: Any``
+##### Static Setter ``data = v: Any`` <a id='Behaviour-0-s-1'></a>
 
-##### Static Getter ``[i]: Num``
+##### Static Getter ``[i]: Num`` <a id='Behaviour-0-g0'></a>
 ``return Num``
 
-##### Static Setter ``[i]: Any = v: Any``
+##### Static Setter ``[i]: Any = v: Any`` <a id='Behaviour-0-s0'></a>
 
-##### Getter ``frame``
+##### Getter ``frame`` <a id='Behaviour-0-g1'></a>
 ``return Num``
 
-##### Setter ``frame = v: Num``
+##### Setter ``frame = v: Num`` <a id='Behaviour-0-s1'></a>
 
-##### Getter ``as_behaviour``
+##### Getter ``as_behaviour`` <a id='Behaviour-0-g2'></a>
 ``return ComponentBehaviour``
 
-##### Constructor ``new(g: GameObject, c: ComponentBehaviour)``
+##### Constructor ``new(g: GameObject, c: ComponentBehaviour)`` <a id='Behaviour-0-c-1'></a>
 ``return Behaviour``
 
-##### Static Method ``start()``
+##### Static Method ``start()`` <a id='Behaviour-0-m-1'></a>
 ``return null``
 > Runs the frame after setup.
 
-##### Static Method ``update()``
+##### Static Method ``update()`` <a id='Behaviour-0-m0'></a>
 ``return null``
 > Run every frame.
 
-##### Static Method ``onCollision(collision: Map)``
+##### Static Method ``onCollision(collision: Map)`` <a id='Behaviour-0-m1'></a>
 ``return null``
 > Runs every frame after start that the Behaviour has a collision given a Rigidbody and Transform is attached.
 
-##### Method ``setup()``
+##### Method ``setup()`` <a id='Behaviour-0-m2'></a>
 ``return null``
 > Runs the first frame regardless of whether or not the Behaviour is attached.
 
-##### Method ``start()``
+##### Method ``start()`` <a id='Behaviour-0-m3'></a>
 ``return null``
 > Runs the second frame regardless of whether or not the Behaviour is attached.
 
-##### Method ``update()``
+##### Method ``update()`` <a id='Behaviour-0-m4'></a>
 ``return null``
 > Runs every frame after start regardless of whether or not the Behaviour is attached.
 
