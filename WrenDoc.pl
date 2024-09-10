@@ -367,7 +367,7 @@ sub create_doc {
                                 }
                             }
                             my $link = $mod."-".$#classes."-s".$#setters;
-                            $result .= "`` <a id='".$link."'><\a>\n";
+                            $result .= "`` <a id='".$link."'></a>\n";
                             $result .= $description . "\n";
                             push( @setters, "> - [" . $name . "](#".$link.")" );
                             
