@@ -61,14 +61,14 @@ class Behaviour is Serializable {
         if(__data[g.uuid] == null) {
             __data[g.uuid] = {}
         }
-        if(__data[g.uuid][\"%(c)\"] == null) {
-            __data[g.uuid][\"%(c)\"] = {}
+        if(__data[g.uuid]["%(c)"] == null) {
+            __data[g.uuid]["%(c)"] = {}
         }
         
 
-        var b = ComponentBehaviour.new(\"%(c)\")
+        var b = ComponentBehaviour.new("%(c)")
         _behaviour = b.as_component
-        __data[g.uuid][\"%(c)\"][b.uuid] = c.new()
+        __data[g.uuid]["%(c)"][b.uuid] = c.new()
     }
 	
 	///_ -> null
