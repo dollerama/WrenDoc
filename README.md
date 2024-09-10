@@ -19,7 +19,7 @@ To document your code just add documentation comments before a code symbol.
 ```
 If no documentation comments are found no worries your code will still generate a document, however, there will not be any type annotations or descriptions. Any missing type annotation will appear as a ``_``
 
-Here's an example of some wren code that has been documented.
+Here's an example of some wren code that has been documented:
 ```js
 ///Behaviours allow for custom code to run on GameObjects during the game loop.
 class Behaviour is Serializable {
