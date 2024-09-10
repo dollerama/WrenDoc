@@ -193,7 +193,7 @@ WrenDoc: Finished
 ``return null``
 > Runs every frame after start regardless of whether or not the Behaviour is attached.
 
-\
-\
+
+
 ## Organization
 When documenting multiple modules and classes WrenDoc will organize a list of modules at the top of the page and at each module it will list all classes in the module.
