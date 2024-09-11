@@ -73,11 +73,12 @@ sub create_doc {
                 if ($class_inherit) {
                     my $class_name =
                       ( $_ =~ /(?<=(class\s))(.*)(?=(\s[is]))/g )[1];
-                    $header .= "### Foreign Class ``" . $class_name . "``\n";
+                    my $link = $mod."-"."-k".$#classes;
+                    $header .= "### Foreign Class ``" . $class_name . "`` <a id='".$link."'></a> \n";
                     $header .= "> Inherits from ``" . $class_inherit . "``\n";
                     $header .= ">\n".$description . "\n";
                     push( @classes,
-                        "> - [" . $class_name . "](#foreign-class-" . lc($class_name) . ")" );
+                        "> - [" . $class_name . "](#" .$link. ")" );
                         
                     $description = "";
                     $parameters  = "";
@@ -86,10 +87,11 @@ sub create_doc {
                 else {
                     my $class_name =
                       ( $_ =~ /(?<=(class\s))(.*)(?=(\s[{]))/g )[1];
-                    $header .= "### Foreign Class ``" . $class_name . "``\n";
+                    my $link = $mod."-"."-k".$#classes;
+                    $header .= "### Foreign Class `` <a id='" . $class_name . "'></a> ``\n";
                     $header .= ">\n".$description . "\n";
                     push( @classes,
-                        "> - [" . $class_name . "](#foreign-class-" . lc($class_name) . ")" );
+                        "> - [" . $class_name . "](#" . $link . ")" );
                         
                     $description = "";
                     $parameters  = "";
@@ -305,15 +307,13 @@ sub create_doc {
                 if ($class_inherit) {
                     my $class_name =
                       ( $_ =~ /(?<=(class\s))(.*)(?=(\s[is]))/g )[1];
-                    $header .= "### Class ``" . $class_name . "``\n";
+                    my $link = $mod."-"."-k".$#classes;
+                    $header .= "### Class ``" . $class_name . "`` <a id='".$link."'></a> \n";
                     $header .=
                       "> Inherits from ``" . $class_inherit . "``\n";
                     $header .= ">\n".$description . "\n";
                     push( @classes,
-                            "> - ["
-                          . $class_name . "](#class-"
-                          . lc($class_name)
-                          . ")" );
+                            "> - [". $class_name . "](#".$link.")" );
                     
                     $description = "";
                     $parameters  = "";
@@ -322,10 +322,11 @@ sub create_doc {
                 else {
                     my $class_name =
                       ( $_ =~ /(?<=(class\s))(.*)(?=(\s[{]))/g )[1];
-                    $header .= "### Class ``" . $class_name . "``\n";
+                    my $link = $mod."-"."-k".$#classes;
+                    $header .= "### Class ``" . $class_name . "`` <a id='".$link."'></a>\n";
                     $header .= ">\n".$description . "\n";
                     push( @classes,
-                        "> - [" . $class_name . "](#class-" . lc($class_name) . ")" );
+                        "> - [" . $class_name . "](#" . $link . ")" );
                         
                     $description = "";
                     $parameters  = "";
